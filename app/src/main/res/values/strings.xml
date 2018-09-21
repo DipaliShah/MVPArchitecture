@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MVPArchitecture</string>
+    <string name="no_network_found">No Internet connection available</string>
+    <string name="please_wait_for_second">Please wait for seconds</string>
+    <string name="some_error">Something went wrong</string>
+    <string name="dialog_ok_btn">OK</string>
+    <string name="no_result_found">No Result Found</string>
+</resources>
