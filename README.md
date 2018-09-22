@@ -9,4 +9,6 @@ The app has following packages:
 5. main: View classes along with their corresponding Presenters.
 6. service: Services for the application.
 7. NetworkUtils: Utility class.
+
+
 Classes have been designed in such a way that it could be inherited and maximize the code reuse.
