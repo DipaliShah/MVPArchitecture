@@ -33,6 +33,7 @@ public class MainActivityPresenter<V extends IMainActivityView> extends BasePres
             if (mApiService == null)
                 mApiService = provideNewApiService();
             Single<SampleDto> listSingle = mApiService.sunTimings(latitude, longitude, date,zone);
+            //Pattern 1.
             listSingle.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new SingleObserver<SampleDto>() {
                         @Override
@@ -49,6 +50,11 @@ public class MainActivityPresenter<V extends IMainActivityView> extends BasePres
                             getMvpView().setErrorMessage();
                         }
                     });
+            
+            // Pattern 2. Or we can use generic subsribe method of BasePresenter as following
+            
+            subscribeSingle(listSingle,panchangResult ->  getMvpView().getAllTimings(panchangResult),
+                           error -> getMvpView().setErrorMessage());
         }
     }
 }
